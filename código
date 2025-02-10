@@ -1,0 +1,33 @@
+using System;
+
+class Pessoa
+{
+    public string nome;
+    public string endereco;
+    public string telefone; // Alterado para string para suportar DDD e traços
+
+    // Construtor para inicializar os dados da pessoa
+    public Pessoa(string nome, string endereco, string telefone)
+    {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.telefone = telefone;
+    }
+
+    // Método que retorna o primeiro nome
+    public string PrimeiroNome()
+    {
+        return nome.Split(' ')[0]; // Divide pelo espaço e pega o primeiro elemento
+    }
+}
+
+// Testando a classe
+class Program
+{
+    static void Main()
+    {
+        Pessoa pessoa = new Pessoa("Gabriela Alcântara", "Rua Exemplo, 123", "(31) 98765-4321");
+
+        Console.WriteLine("Primeiro Nome: " + pessoa.PrimeiroNome()); // Saída: Gabriela
+    }
+}
